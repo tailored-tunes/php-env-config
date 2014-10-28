@@ -1,6 +1,6 @@
 {
-    "name": "tailored-tunes/php-router",
-    "description": "A lightweight router solution",
+    "name": "tailored-tunes/php-env-config",
+    "description": "A lightweight configuration management solution",
     "type": "library",
     "keywords": ["routing"],
     "license": "GPLV2",
