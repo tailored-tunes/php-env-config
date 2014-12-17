@@ -2,7 +2,6 @@
 
 namespace TailoredTunes\Config;
 
-
 class ConfigurationTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -31,6 +30,18 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $expected = $realValue;
 
         $this->assertEquals($actual, $expected, 'The real value is not returned');
+    }
+
+    public function testRequired()
+    {
+        $name = uniqid('name');
+        $config = new Configuration();
+        try {
+            $config->required($name);
+        } catch (ConfigurationNotFoundException $e) {
+            $expected = sprintf("%s not found in configuration", $name);
+            $this->assertEquals($expected, $e->getMessage());
+        }
     }
 
     public function testDefaultValuesDefine()
